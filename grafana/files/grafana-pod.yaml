@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: grafana-pod
+  name: grafana-pod
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: grafana01
+    image: {{ grafana.image.name }}
+    securityContext:
+      allowPrivilegeEscalation: false
+      privileged: false
+      capabilities:
+        add: []
+        drop:
+        - CAP_MKNOD
+        - CAP_NET_RAW
+        - CAP_AUDIT_WRITE
+      seLinuxOptions: {}
+    resources:
+      requests:
+        memory: {{ grafana.resources.requests.memory }}
+      limits:
+        memory: {{ grafana.resources.limits.memory }}
+    ports:
+    - containerPort: {{ grafana.port.http.container }}
+      hostPort: {{ grafana.port.http.host }}
+      hostIP: {{ grafana.port.http.ip }}
+      protocol: tcp
+    env:
+      - name: GF_DATABASE_TYPE
+        value: {{ grafana.db.type }}
+      - name: GF_DATABASE_HOST
+        value: {{ grafana.db.host }}
+      - name: GF_DATABASE_NAME
+        value: {{ grafana.db.name }}
+      - name: GF_DATABASE_USER
+        value: {{ grafana.db.user }}
+      - name: GF_DATABASE_PASSWORD
+        value: {{ grafana.db.password }}
+      - name: GF_REMOTE_CACHE_TYPE
+        value: {{ grafana.cache.type }}
+      - name: GF_REMOTE_CACHE_CONNSTR
+        value: addr={{ grafana.cache.addr }},pool_size={{ grafana.cache.pool_size }},db={{ grafana.cache.db }},ssl={{ grafana.cache.ssl }}
+      - name: GF_DATE_FORMATS_DEFAULT_TIMEZONE
+        value: {{ grafana.timezone }}
+      - name: GF_PANELS_DISABLE_SANITIZE_HTML
+        value: {{ grafana.disable_sanitize_html }}
