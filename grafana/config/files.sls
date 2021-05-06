@@ -37,6 +37,7 @@
     - group: {{ GRAFANA.hostuser.group }}
     - template: jinja
     - context:
+      projectname: {{ GRAFANA.projectname }}
       grafana: {{ GRAFANA.grafana }}
 
 /opt/grafana/mysql-pod.yaml:
@@ -46,6 +47,7 @@
     - group: {{ GRAFANA.hostuser.group }}
     - template: jinja
     - context:
+      projectname: {{ GRAFANA.projectname }}
       mysql: {{ GRAFANA.mysql }}
 
 /opt/grafana/redis-pod.yaml:
@@ -55,4 +57,5 @@
     - group: {{ GRAFANA.hostuser.group }}
     - template: jinja
     - context:
+      projectname: {{ GRAFANA.projectname }}
       redis: {{ GRAFANA.redis }}

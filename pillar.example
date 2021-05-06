@@ -3,6 +3,7 @@
 
 grafana:
   lookup:
+    projectname: grafana
     hostuser:
       name: vagrant
       group: vagrant
@@ -21,12 +22,12 @@ grafana:
       timezone: browser
       disable_sanitize_html: "false"
       db:
-        host: mysql-pod:3306
+        host: grafana-mysql-pod:3306
         name: grafanadb
         user: grafana
         password: abcde12345
       cache:
-        addr: redis-pod:6379
+        addr: grafana-redis-pod:6379
         pool_size: 100
         db: 0
         ssl: "false"

@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    app: grafana-pod
-  name: grafana-pod
+    app: {{ projectname }}-grafana-pod
+  name: {{ projectname }}-grafana-pod
 spec:
   restartPolicy: OnFailure
   containers:
