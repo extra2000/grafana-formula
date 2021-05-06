@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/extra2000/grafana-formula/compare/v1.1.0...v2.0.0) (2021-05-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Naming scheme for pod and volume have changed to prevent conflicts with other deployments.
+
+### Features
+
+* Prefix pod and volume name with `projectname` to prevent conflict with other projects that are using the same container name ([533f8c0](https://github.com/extra2000/grafana-formula/commit/533f8c0618cf82854221568fcb197948a16bb31d))
+
 ## [1.1.0](https://github.com/extra2000/grafana-formula/compare/v1.0.0...v1.1.0) (2021-05-06)
 
 
