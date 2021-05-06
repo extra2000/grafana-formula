@@ -4,7 +4,7 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import GRAFANA with context %}
 
-mysql-pod-destroy:
+redis-pod-destroy:
   cmd.run:
-    - name: podman pod rm --force mysql-pod
+    - name: podman pod rm --force redis-pod
     - runas: {{ GRAFANA.hostuser.name }}
