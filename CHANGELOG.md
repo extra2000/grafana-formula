@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0](https://github.com/extra2000/grafana-formula/compare/v1.0.0...v1.1.0) (2021-05-06)
+
+
+### Features
+
+* **config.files:** Add support for rootful Podman ([f091c7b](https://github.com/extra2000/grafana-formula/commit/f091c7b79b6bd7b7761b6d0ee72875d488102683))
+
+
+### Code Refactoring
+
+* **salt:** Add mapping YAML files as template ([dc36316](https://github.com/extra2000/grafana-formula/commit/dc3631631f0d05683e8000921a2a32e1da641860))
+
+
+### Fixes
+
+* **defaults.yaml, pillar.example:** Use `cni-podman1` instead of `cni-podman0` to prevent conflict with rootful containers ([8d25bdb](https://github.com/extra2000/grafana-formula/commit/8d25bdbfd209e1e059e136a86e6f4b53c9048b4e))
+* **service.redis.destroy:** Fix typo ([267b514](https://github.com/extra2000/grafana-formula/commit/267b5149617ec7c9cc497b5d91a177eb5c41c2ed))
+
 ## 1.0.0 (2021-04-30)
 
 
