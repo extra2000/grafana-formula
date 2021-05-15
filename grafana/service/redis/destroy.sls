@@ -6,5 +6,5 @@
 
 redis-pod-destroy:
   cmd.run:
-    - name: podman pod rm --force redis-pod
+    - name: podman pod rm --force {{ GRAFANA.projectname }}-redis-pod
     - runas: {{ GRAFANA.hostuser.name }}

@@ -6,5 +6,5 @@
 
 mysql-pod-destroy:
   cmd.run:
-    - name: podman pod rm --force mysql-pod
+    - name: podman pod rm --force {{ GRAFANA.projectname }}-mysql-pod
     - runas: {{ GRAFANA.hostuser.name }}

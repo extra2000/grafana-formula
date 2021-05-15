@@ -6,5 +6,5 @@
 
 grafana-pod-destroy:
   cmd.run:
-    - name: podman pod rm --force grafana-pod
+    - name: podman pod rm --force {{ GRAFANA.projectname }}-grafana-pod
     - runas: {{ GRAFANA.hostuser.name }}
