@@ -4,9 +4,9 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import GRAFANA with context %}
 
-/opt/nginx/https.conf:
+/opt/nginx/conf.d/{{ GRAFANA.projectname }}-grafana.conf:
   file.managed:
-    - source: salt://grafana/files/nginx-https.conf.jinja
+    - source: salt://grafana/files/nginx/grafana.conf
     - template: jinja
     - context:
-      grafana: {{ GRAFANA.grafana }}
+      port: {{ GRAFANA.grafana.port }}

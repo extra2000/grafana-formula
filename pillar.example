@@ -16,6 +16,7 @@ grafana:
     grafana:
       port:
         http:
+          server_name: grafana.example.lan
           container: 3000
           host: 3000
           ip: 127.0.0.1
