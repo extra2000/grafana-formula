@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.0.0](https://github.com/extra2000/grafana-formula/compare/v2.0.0...v3.0.0) (2021-05-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **nginx:** require `extra2000/nginx-formula v3.x`
+
+### Features
+
+* **grafana:** add options to include plugins ([b2ba718](https://github.com/extra2000/grafana-formula/commit/b2ba7189a2374d181d95713df7bd6cc50d6f75fd))
+* **grafana:** upgrade from `v7.5.5` to `v7.5.6` ([dda603f](https://github.com/extra2000/grafana-formula/commit/dda603fcf6364055c9ce236c05e7ceeef3cd1c34))
+* **nginx:** simplify NGINX HTTPS conf deployment outside of Vagrant box ([10d059d](https://github.com/extra2000/grafana-formula/commit/10d059d9fca04d3a9fde1e8b92f1bad09a09673e))
+
+
+### Fixes
+
+* **grafana.service:** fix typo forgot to prefix `{{ GRAFANA.projectname }}-` ([1e99c47](https://github.com/extra2000/grafana-formula/commit/1e99c470af608b6f3e12075b4495df793743234f))
+
 ## [2.0.0](https://github.com/extra2000/grafana-formula/compare/v1.1.0...v2.0.0) (2021-05-06)
 
 
