@@ -14,7 +14,7 @@ grafana:
       bridge: cni-podman1
   grafana:
     image:
-      name: docker.io/grafana/grafana:7.5.5
+      name: docker.io/grafana/grafana:7.5.6
     port:
       http:
         container: 3000
