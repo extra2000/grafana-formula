@@ -22,6 +22,8 @@ grafana:
           ip: 127.0.0.1
       timezone: browser
       disable_sanitize_html: "false"
+      plugins:
+        - alexanderzobnin-zabbix-app
       db:
         host: grafana-mysql-pod:3306
         name: grafanadb

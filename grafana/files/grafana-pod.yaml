@@ -48,3 +48,5 @@ spec:
         value: {{ grafana.timezone }}
       - name: GF_PANELS_DISABLE_SANITIZE_HTML
         value: {{ grafana.disable_sanitize_html }}
+      - name: GF_INSTALL_PLUGINS
+        value: "{{ grafana.plugins | join(',')}}"
